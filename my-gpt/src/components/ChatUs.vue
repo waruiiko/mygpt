@@ -12,10 +12,10 @@
         />
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" round @click="startFetch(myMessage)"
+        <!-- <el-button type="primary" round @click="startFetch(myMessage)"
           >submit(stream)</el-button
-        >
-        <el-button type="primary" round @click="getChat()"
+        > -->
+        <el-button type="primary" round @click="getChat(myMessage)"
         >submit</el-button
       >
       </el-form-item>
@@ -61,7 +61,6 @@ export default {
     const getChat = ()=>{
       const message = myMessage.value;
       chatListStore.addMessage({ text: message, sender: "me" });
-      myMessage.value = "";
 
       api.post("/completions",{message:myMessage.value})
       .then((res)=>{
@@ -73,6 +72,8 @@ export default {
       .catch((e) =>{
         console.log(e.data);
       })
+      
+      myMessage.value = "";
     }
 
     return {
