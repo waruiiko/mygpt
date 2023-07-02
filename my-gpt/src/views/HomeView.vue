@@ -24,5 +24,6 @@ export default {
 <style>
 .main {
   min-height: 60vh;
+  max-width: 50em;
 }
 </style>
