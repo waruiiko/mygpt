@@ -12,3 +12,8 @@ Run server:
 cd serve
 npm run serve
 ```
+
+In file ".env"
+```bash
+OPENAI_API_KEY="${your-api-key}"
+```
